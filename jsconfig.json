@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "baseUrl": "."
+  },
+  "include": ["src/**/*", "src/sections/@dashboard/StudentQuery/SpeechDialog.js"],
+  "exclude": ["node_modules"]
+}
