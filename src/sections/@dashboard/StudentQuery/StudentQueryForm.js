@@ -16,13 +16,13 @@ const StudentQueryForm = (props) => {
   const [subData, setsubData] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://tender-duck-pantsuit.cyclic.app/api/subject`).then((subjectResponse) => {
+    axios.get(`https://academia-api-cu1m.onrender.com/api/subject`).then((subjectResponse) => {
       const allSubjects = subjectResponse.data;
 
       const storedData = JSON.parse(localStorage.getItem('StudentIn'));
       const id = storedData.dumID;
 
-      axios.get(`https://tender-duck-pantsuit.cyclic.app/api/students/${id}`).then((studentResponse) => {
+      axios.get(`https://academia-api-cu1m.onrender.com/api/students/${id}`).then((studentResponse) => {
         const coursesArray = studentResponse.data.course.split(',').map((course) => course.trim());
 
         const filteredSubjects = allSubjects.filter((subject) => coursesArray.includes(subject.subject));
@@ -38,7 +38,7 @@ const StudentQueryForm = (props) => {
 
   useEffect(() => {
     axios
-      .get(`https://tender-duck-pantsuit.cyclic.app/api/students/${id}`)
+      .get(`https://academia-api-cu1m.onrender.com/api/students/${id}`)
       .then((response) => {
         setRows(response.data);
       })
@@ -82,7 +82,7 @@ const StudentQueryForm = (props) => {
         if (result.isConfirmed) {
           Swal.fire('Query Send..👍', '', 'success');
           axios
-            .post('https://tender-duck-pantsuit.cyclic.app/api/studentquery', data)
+            .post('https://academia-api-cu1m.onrender.com/api/studentquery', data)
             .then((response) => {
               console.log('Response:', response);
             })

@@ -18,7 +18,7 @@ export default function Profile() {
   const formattedDate = `${day}-${month}-${year}`;
 
   useEffect(() => {
-    axios.get(`https://tender-duck-pantsuit.cyclic.app/api/students/${id}`).then((x) => {
+    axios.get(`https://academia-api-cu1m.onrender.com/api/students/${id}`).then((x) => {
       setRows(x.data);
     });
   }, []);

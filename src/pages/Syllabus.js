@@ -22,13 +22,13 @@ const Syllabus = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`https://tender-duck-pantsuit.cyclic.app/api/subject`).then((subjectResponse) => {
+    axios.get(`https://academia-api-cu1m.onrender.com/api/subject`).then((subjectResponse) => {
       const allSubjects = subjectResponse.data;
 
       const storedData = JSON.parse(localStorage.getItem('StudentIn'));
       const id = storedData.dumID;
 
-      axios.get(`https://tender-duck-pantsuit.cyclic.app/api/students/${id}`).then((studentResponse) => {
+      axios.get(`https://academia-api-cu1m.onrender.com/api/students/${id}`).then((studentResponse) => {
         const coursesArray = studentResponse.data.course.split(',').map((course) => course.trim());
 
         const filteredSubjects = allSubjects.filter((subject) => coursesArray.includes(subject.subject));
@@ -71,7 +71,7 @@ const Syllabus = () => {
 
   useEffect(() => {
     if (activeIndex !== null) {
-      axios.get(`https://tender-duck-pantsuit.cyclic.app/api/subassignment`).then((r) => {
+      axios.get(`https://academia-api-cu1m.onrender.com/api/subassignment`).then((r) => {
         const data = r.data;
         const subjectName = subData[activeIndex].subject;
         const filteredData = data
@@ -87,7 +87,7 @@ const Syllabus = () => {
 
   useEffect(() => {
     if (activeIndex !== null) {
-      axios.get('https://tender-duck-pantsuit.cyclic.app/api/subdrive').then((r) => {
+      axios.get('https://academia-api-cu1m.onrender.com/api/subdrive').then((r) => {
         const data = r.data;
         const subjectName = subData[activeIndex].subject;
         const filteredData = data
@@ -103,7 +103,7 @@ const Syllabus = () => {
 
   useEffect(() => {
     if (activeIndex !== null) {
-      axios.get('https://tender-duck-pantsuit.cyclic.app/api/subnotice').then((r) => {
+      axios.get('https://academia-api-cu1m.onrender.com/api/subnotice').then((r) => {
         const data = r.data;
         const subjectName = subData[activeIndex].subject;
         const filteredData = data

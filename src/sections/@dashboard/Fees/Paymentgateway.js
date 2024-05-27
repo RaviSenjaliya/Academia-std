@@ -36,7 +36,7 @@ function Paymentgateway(props) {
   const handleNext = (e) => {
     if (activeStep === steps.length - 1) {
       if (window.confirm('Are you sure you want to Submit?')) {
-        axios.post('https://tender-duck-pantsuit.cyclic.app/api/fees', formData).then((r) => {
+        axios.post('https://academia-api-cu1m.onrender.com/api/fees', formData).then((r) => {
           console.log(r);
         });
         new Audio(Soundd).play();

@@ -18,7 +18,7 @@ export default function FeesDetailed(props) {
   const remaining = fees - val.totamt;
 
   useEffect(() => {
-    axios.get(`https://tender-duck-pantsuit.cyclic.app/api/fees/${id}`).then((x) => {
+    axios.get(`https://academia-api-cu1m.onrender.com/api/fees/${id}`).then((x) => {
       setval(x.data);
     });
   }, []);

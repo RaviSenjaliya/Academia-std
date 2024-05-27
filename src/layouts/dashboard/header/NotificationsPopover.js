@@ -12,7 +12,7 @@ export default function NotificationsPopover() {
   const [open, setOpen] = useState(null);
 
   useEffect(() => {
-    axios.get('https://tender-duck-pantsuit.cyclic.app/api/notifications').then((r) => {
+    axios.get('https://academia-api-cu1m.onrender.com/api/notifications').then((r) => {
       setdata(r.data);
     });
   }, []);

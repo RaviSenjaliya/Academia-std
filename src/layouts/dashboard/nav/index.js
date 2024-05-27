@@ -45,7 +45,7 @@ export default function Nav({ openNav, onCloseNav }) {
   useEffect(() => {
     let timeout;
     axios
-      .get('https://tender-duck-pantsuit.cyclic.app/api/session')
+      .get('https://academia-api-cu1m.onrender.com/api/session')
       .then((response) => {
         const sessionData = response.data;
         setSession(sessionData);

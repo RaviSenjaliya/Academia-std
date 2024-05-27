@@ -41,7 +41,7 @@ export default function Fees() {
   const storedData = JSON.parse(localStorage.getItem('StudentIn'));
   const id = storedData.id;
   useEffect(() => {
-    axios.get(`https://tender-duck-pantsuit.cyclic.app/api/fees`).then((r) => {
+    axios.get(`https://academia-api-cu1m.onrender.com/api/fees`).then((r) => {
       const filteredData = r.data.filter((value) => value.feesid === id); // Filter data based on feesid === id
       const modifiedData = filteredData.map((value, index) => {
         value.id = index + 1;
